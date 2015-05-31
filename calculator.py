@@ -17,6 +17,7 @@ class Calculator:
 
 
     def calculate_first_pass(self):
+        # calculate '*', '/', '%'
         for token in self.tokens:
             if isinstance(token, Operator):
                 self.stack.append(token)
@@ -35,6 +36,7 @@ class Calculator:
 
 
     def calculate_second_pass(self):
+        # calculate '+', '_'
         value1 = self.stack.pop(0)
         while self.stack:
             operator = self.stack.pop(0)
@@ -43,6 +45,6 @@ class Calculator:
 
 
 if __name__ == '__main__':
-    lexer = Lexer('1 + 1 + 4 * 4')
+    lexer = Lexer('1 + -1 + 4 * 4')
     calculator = Calculator(lexer.tokens)
     print calculator.calculate()

@@ -10,6 +10,7 @@ class Lexer:
 
 
     def get_tokens(self):
+        # tokenize the original input
         tokens = []
         for t in self.string.split(' '):
             if not t: continue
@@ -21,6 +22,7 @@ class Lexer:
 
 
     def is_valid(self, tokens):
+        # validate input
         if not len(tokens):
             raise Exception('Empty expression')
         if isinstance(tokens[-1], Operator):

@@ -7,8 +7,11 @@ class Operator:
             raise Exception('Invalid operator')
         self.operator = operator
 
+
     def is_high_priority(self):
+        # operator is '*', '/', '%'
         return self.operator in HIGH_PRIORITY_OPERATORS
+
 
     def is_operator(self, token):
         return True if token in OPERATORS else False
@@ -26,5 +29,4 @@ class Operator:
             result = value1 / value2
         elif self.operator == '%':
             result = value1 % value2
-
         return Number(result)
