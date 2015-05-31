@@ -1,8 +1,6 @@
 from lexer import Lexer
+from constants import OPERATORS, HIGH_PRIORITY_OPERATORS
 
-
-OPERATORS = ['+', '-', '*', '/', '%']
-HIGH_PRIORITY_OPERATORS = ['*', '/', '%']
 
 class Calculator:
     def __init__(self, tokens):

@@ -1,3 +1,6 @@
+from constants import OPERATORS
+
+
 class Lexer:
     def __init__(self, string):
         self.string = string
